@@ -1,26 +1,51 @@
-@import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+  --color-background: #6b21a8;    
+  --color-foreground: #f6f7fb;    
+
+
+  --color-page-bg: #e8bad9;       
+  --color-page-fg: #111111;        
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue",
+               Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+ 
+    --color-background: #6b21a8; 
+    --color-foreground: #ffffff;
+
+    --color-page-bg: #0a0a0a;
+    --color-page-fg: #fde2e8;
   }
+} */
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
+html, body { height: 100%; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100dvh;    
+  display: flex;
+  flex-direction: column;  
+  background: var(--color-page-bg);
+  color: var(--color-page-fg);
+  font-family: var(--font-sans);
+  line-height: 1.5;
 }
+
+main { flex: 1 0 auto; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }

@@ -3,6 +3,7 @@
   color: var(--color-foreground);
   font-family: var(--font-sans);
   padding: 0.75rem 1rem;
+  font-size: 1rem;
 }
 
 .inner {
@@ -20,6 +21,7 @@
   line-height: 1.1;
   text-decoration: none;
   color: var(--color-foreground);
+  font-size: 10rem;
 }
 
 .title {

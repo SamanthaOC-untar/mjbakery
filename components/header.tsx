@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/header.module.css";
+import styles from "../app/styles/header.module.css";
 
 export function Header() {
   return (
@@ -7,14 +7,14 @@ export function Header() {
       <div className={styles.inner}>
         <a href="/" className={styles.brand} aria-label="Minmin Jaya Bakery Home">
           <span className={styles.title}>Minmin Jaya Bakery</span>
-          <span className={styles.tagline}>Cake &amp; Pastry</span>
+          <span className={styles.tagline}>Bread, Cakes, &amp; Pastries</span>
         </a>
 
         <nav className={styles.nav} aria-label="Main navigation">
           <a href="/">Home</a>
           <a href="/products">Products</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <a href="/about">About Us</a>
+          <a href="/contact">Contact Us</a>
         </nav>
       </div>
     </header>

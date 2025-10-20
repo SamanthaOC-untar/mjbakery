@@ -1,103 +1,118 @@
+import React from "react";
+import styles from "./styles/home.module.css";
 import Image from "next/image";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main>
+      <div className={styles.container}>
+        {/* HERO */}
+        <section className={styles.hero} aria-labelledby="hero-title">
+          <div className={styles.heroText}>
+            <h1 id="hero-title">Minmin Jaya Bakery</h1>
+            <p>
+              Freshly baked bread, cakes, and pastries every day—crafted with real
+              butter, premium flour, and a touch of joy.
+            </p>
+            <div className={styles.ctaRow}>
+              <a href="/products">
+                <button className={`${styles.btn} ${styles.btnPrimary}`}>
+                  See Our Products
+                </button>
+              </a>
+              <a href="/contact">
+                <button className={`${styles.btn} ${styles.btnGhost}`}>
+                  Pre-Order Now
+                </button>
+              </a>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <div className={styles.heroMedia} aria-hidden="true">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/loaf.jpeg"
+              alt="Chef's pick: a beautifully decorated cake with fresh fruit and cream."
+              loading="eager"
+              width={1200}
+              height={900}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          </div>
+        </section>
+
+        {/* HIGHLIGHTS */}
+        <section className={styles.section} aria-labelledby="sec-highlights">
+          <h2 id="sec-highlights">Why Choose Minmin Jaya?</h2>
+          <div className={styles.grid}>
+            <article className={styles.card}>
+              <div className={styles.cardTitle}>Baked Daily</div>
+              <p>Fresh every morning, with no preservatives.</p>
+            </article>
+            <article className={styles.card}>
+              <div className={styles.cardTitle}>Premium Ingredients</div>
+              <p>Real butter, Belgian chocolate, and choice dairy.</p>
+            </article>
+            <article className={styles.card}>
+              <div className={styles.cardTitle}>Custom Cakes</div>
+              <p>Designed for birthdays, weddings, and corporate events.</p>
+            </article>
+          </div>
+        </section>
+
+        {/* TESTIMONIAL / CTA STRIP */}
+        <section className={styles.strip} aria-labelledby="sec-quote">
+          <h2 id="sec-quote" style={{ marginTop: 0 }}>
+            What Customers Say
+          </h2>
+          <p className={styles.quote}>
+            “The texture is soft and the sweetness is just right. The cake
+            always steals the show at our events.”
+          </p>
+          <div className={styles.ctaRow} style={{ marginTop: ".6rem" }}>
+            <a href="/about">
+              <button className={`${styles.btn} ${styles.btnGhost}`}>
+                Learn More
+              </button>
+            </a>
+            <a href="/contact">
+              <button className={`${styles.btn} ${styles.btnPrimary}`}>
+                Order via WhatsApp
+              </button>
+            </a>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section
+          className={`${styles.section} ${styles.faq}`}
+          aria-labelledby="sec-faq"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <h2 id="sec-faq">FAQ</h2>
+
+          <details>
+            <summary>Do you accept custom cake designs?</summary>
+            <div>
+              Yes. Send your reference/design, size, and event date—we’ll
+              confirm pricing and the production timeline.
+            </div>
+          </details>
+
+          <details>
+            <summary>How long is the pre-order time?</summary>
+            <div>
+              For whole cakes: at least 2 days in advance. Daily pastries can be
+              same-day while stock lasts.
+            </div>
+          </details>
+
+          <details>
+            <summary>Do you provide delivery?</summary>
+            <div>
+              Yes. We deliver within the city and nearby areas (fees vary by
+              distance). Self-pickup is also available.
+            </div>
+          </details>
+        </section>
+      </div>
+    </main>
   );
 }
