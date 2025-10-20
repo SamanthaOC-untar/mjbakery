@@ -14,7 +14,7 @@ export function Footer() {
         <div className={styles.info}>
           <div>
             <div className={styles.label}>Address</div>
-            <div>Jl. Cupcakes and Rainbow no 123</div>
+            <div>Cupcakes and Rainbow Road 123</div>
           </div>
           <div>
             <div className={styles.label}>Hours</div>
