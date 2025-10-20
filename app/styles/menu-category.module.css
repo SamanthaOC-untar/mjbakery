@@ -1,0 +1,221 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2rem;
+}
+
+/* header */
+.headerBar {
+  margin-top: .35rem;
+  text-align: center;
+}
+
+.crumbRow {
+  display: inline-flex;
+  gap: .3rem;
+  align-items: baseline;
+  font-size: .9rem;
+  opacity: .9;
+}
+
+.crumbRow a {
+  color: var(--color-page-fg);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(0, 0, 0, .4);
+}
+
+.crumbRow a:hover {
+  text-decoration: underline;
+}
+
+.crumbCurrent {
+  font-weight: 700;
+}
+
+.headingWrap {
+  margin-top: .35rem;
+}
+
+.kicker {
+  display: inline-block;
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+
+.title {
+  margin: .15rem 0 .2rem;
+  font: 800 clamp(1.9rem, 2.4vw + 1rem, 2.8rem)/1 var(--font-sans);
+  letter-spacing: .2px;
+}
+
+.badge {
+  margin-left: .5rem;
+  display: inline-block;
+  font-size: .8rem;
+  font-weight: 700;
+  padding: .18rem .5rem;
+  border-radius: .75rem;
+  border: 1px solid rgba(0, 0, 0, .15);
+  background: rgba(255, 255, 255, .6);
+  vertical-align: middle;
+}
+
+.lead {
+  margin: 0 auto;
+  max-width: 760px;
+  opacity: .95;
+}
+
+.metaRow {
+  margin-top: .6rem;
+  display: inline-flex;
+  gap: .6rem;
+  align-items: center;
+  font-weight: 600;
+  opacity: .9;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #111;
+  display: inline-block;
+}
+
+/* grid */
+.grid {
+  margin-top: 1.1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem;
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* card */
+.card {
+  background: #fff7fa;
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 14px;
+  padding: .9rem;
+  transition: transform .18s ease, box-shadow .18s ease, background-color .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .10);
+  background: #fff;
+}
+
+.card:focus-within {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+/* image */
+.thumb {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff6f8;
+  margin-bottom: .6rem;
+  box-shadow: inset 0 6px 12px rgba(0, 0, 0, .06);
+}
+
+.thumbImg {
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform .6s ease;
+}
+
+.card:hover .thumbImg {
+  transform: scale(1.04);
+}
+
+/* card body */
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .5rem;
+}
+
+.cardTitle {
+  margin: 0;
+  font-weight: 800;
+}
+
+.price {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cardDesc {
+  margin: .35rem 0 .7rem;
+  opacity: .9;
+}
+
+/* actions */
+.cardActions {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.btnPrimary,
+.btnGhost {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  padding: .55rem .85rem;
+  border-radius: .65rem;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease;
+}
+
+.btnPrimary {
+  background: #111;
+  color: #fff;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .18);
+}
+
+.btnPrimary:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+.btnGhost {
+  background: transparent;
+  color: #111;
+  outline: 2px solid #111;
+}
+
+.btnGhost:hover {
+  background: rgba(0, 0, 0, .06);
+}
+
+.btnGhost:focus-visible {
+  outline: 3px solid #111;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .btnPrimary,
+  .btnGhost,
+  .thumbImg {
+    transition: none;
+  }
+}
