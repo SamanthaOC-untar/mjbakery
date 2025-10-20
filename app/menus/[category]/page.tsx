@@ -37,8 +37,11 @@ const CATALOG: Catalog = {
   },
 };
 
-export default function CategoryPage({ params }: { params: { category?: string } }) {
-  const key = (params.category ?? "").toLowerCase() as CategoryKey;
+export default async function CategoryPage(
+  { params }: { params: Promise<{ category?: string }> }
+) {
+  const { category } = await params;              // ⟵ wajib await di Next 15
+  const key = (category ?? "").toLowerCase() as "breads" | "cakes" | "pastries";
   const data = CATALOG[key];
   if (!data) return notFound();
 
