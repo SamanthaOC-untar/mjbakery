@@ -15,9 +15,9 @@ export default function Page() {
               butter, premium flour, and a touch of joy.
             </p>
             <div className={styles.ctaRow}>
-              <a href="/products">
+              <a href="/menus">
                 <button className={`${styles.btn} ${styles.btnPrimary}`}>
-                  See Our Products
+                  See Our Menus
                 </button>
               </a>
               <a href="/contact">
